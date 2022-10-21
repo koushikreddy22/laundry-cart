@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 
 const userOrderRoute = require('./routes/userOrderRoute');
+const productsRoute = require('./routes/productsRoute');
 
 
 
@@ -10,7 +11,9 @@ const userOrderRoute = require('./routes/userOrderRoute');
 
 
 app.use(bodyParser());
-app.use("/", userOrderRoute);
+app.use("/orders", userOrderRoute);
+app.use("/products", productsRoute);
+
 
 
 
