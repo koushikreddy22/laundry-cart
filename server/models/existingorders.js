@@ -4,36 +4,24 @@ const orderSchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    date:{
-        type:Date,
-        required:true
-    },
-    store_location:{
+    user_id:{
         type:String,
-        required:true
+        rquired:true
     },
-    city:{
+    address_id:{
         type:String,
-        required:true
-    },
-    store_phone:{
-        type:Number,
-        required:true
-    },
-    total_items:{
-        type:Number,
-        required:true
-    },
-    price:{
-        type:Number,
         required:true
     },
     status:{
         type:String,
-        default:"Ready to Ship"
-    }
-
+        default:"picked up"
+    },
+    date:{
+        type:Date,
+        required:true
+    },
+    store_details:new Object,
+    product_type:new Object
 },
-    
     { timestamps: true })
 mongoose.model("Order",orderSchema)
