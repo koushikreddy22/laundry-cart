@@ -1,11 +1,9 @@
 const mongoose = require("mongoose");
 const cors=require('cors');
 const app = require('./app.js');
-app.use(cors({
-    origin:""
-}));
-const PORT= process.env.PORT || 4000;
+app.use(cors());
 
+const PORT = process.env.PORT || 8080;
 
 
 
@@ -19,5 +17,5 @@ mongoose.connection.on('error',(err)=>{
     console.log("error connecting",err);
 });
 app.listen(PORT,()=>{
-    console.log("the server is running on",4000);
+    console.log("the server is running on",8080);
 });

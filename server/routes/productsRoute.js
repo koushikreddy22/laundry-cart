@@ -49,4 +49,29 @@ router.post('/', async (req, res) => {
 
 });
 
+router.delete('/:id', async (req, res) => {
+
+    try{
+
+            
+            const message = await ProductsModel.deleteMany({_id:req.params.id});
+
+            res.status(200).json({
+                status:"Success",
+                message:message,
+                
+            });
+    
+             
+
+    }
+    catch(e){
+        res.status(401).json({ 
+            status:"Failed",
+            message:e.message
+        });
+    }
+
+});
+
 module.exports = router;
